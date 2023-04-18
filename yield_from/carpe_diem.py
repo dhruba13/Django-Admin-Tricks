@@ -12,9 +12,10 @@ for iteration in iterator:
     ... # do something
     if  some_cause:
         clean = True
-    ... # do something
+    ... # do something else
     if  other_cause:
         break
+    ... # do something at the end of loop
 else:
-    # some code
+    # some finally code
 
