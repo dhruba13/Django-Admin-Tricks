@@ -1,6 +1,7 @@
-INFINITY = iter(int, 1)  # infinity generator
+INFINITY = iter(int, 1)  # infinity iterator
 
-for __moment__ in INFINITY:
+
+for __moment__ in INFINITY: # infinity generator
     ...  # Carpe diem
 
 

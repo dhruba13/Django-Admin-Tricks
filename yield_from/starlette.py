@@ -31,5 +31,5 @@ def _read_file(self, file_name):
         lines = (line.strip() for line in lines if line or lines.close())
         lines = (line.partition("=") for line in lines if not line.startswith("#"))
         return {key.rstrip() : value.lstrip().strip("\"'")
-                    for key, separator, val in lines if separator)
+                    for key, separator, val in lines if separator}
 

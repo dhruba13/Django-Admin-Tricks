@@ -9,4 +9,4 @@
     def get_readonly_fields(self, request, obj=None):
         yield from super().get_readonly_fields(request, obj)
         if not request.user.is_superuser:
-            yield 'request_status',
+            yield 'request_status'
