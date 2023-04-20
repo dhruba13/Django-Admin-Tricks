@@ -1,3 +1,15 @@
+def clearables(cookies, *ag, **kw):
+    for cookie in cookies:
+        ...
+        yield cookie
+
+def remove_cookie_by_name(cookies, *ag, **kw):
+    """ Wraps CookieJar.clear(), is O(n). """
+    for cookie in clearables(cookies, *ag, **kw):
+        ...
+
+
+
 def remove_cookie_by_name(cookiejar, name, domain=None, path=None):
     """Unsets a cookie by name, by default over all domains and paths.
 
