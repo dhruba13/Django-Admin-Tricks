@@ -1,6 +1,8 @@
 import time
 import curio
 
+from europython2023.curio import REPORT
+
 async def count(variable):
     print(f'One{variable}')
     await curio.sleep(1)
@@ -18,4 +20,4 @@ if __name__ == "__main__":
     s = time.perf_counter()
     curio.run(main())
     elapsed = time.perf_counter() - s
-    print(f"{__file__} executed in {elapsed:0.2f} seconds.")
+    REPORT(__file__, elapsed)

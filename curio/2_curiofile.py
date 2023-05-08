@@ -1,7 +1,6 @@
 import time
 import curio
-
-FILE_BASE, *__ = __file__.rpartition('\\')
+from europython2023.curio import FILE_LIST, FILE_BASE, REPORT
 
 
 async def read(filename, idx):
@@ -15,7 +14,7 @@ async def read(filename, idx):
 
 async def main():
     async with curio.TaskGroup() as tasks:
-        for idx, filename in enumerate(('pg.pdf', 'curi.py', 'afile.py', 'async.py')):
+        for idx, filename in enumerate(FILE_LIST):
             await tasks.spawn(read, f'{FILE_BASE}\\{filename}', idx)
         idx = 0
         async for task in tasks:
@@ -27,4 +26,4 @@ if __name__ == "__main__":
     s = time.perf_counter()
     curio.run(main())
     elapsed = time.perf_counter() - s
-    print(f"{__file__} executed in {elapsed:0.5f} seconds.")
+    REPORT(__file__, elapsed)

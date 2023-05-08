@@ -1,10 +1,8 @@
-import aiofiles
 import asyncio
-import json
 import time
-from pathlib import Path
+import aiofiles
 
-FILE_BASE, *__ = __file__.rpartition('\\')
+from europython2023.curio import FILE_LIST, FILE_BASE, REPORT
 
 async def read(filename, idx):
     print('started', filename, idx)
@@ -18,7 +16,7 @@ async def read(filename, idx):
 async def main():
     tasks = []
     # Iterate through files in the directory.
-    for idx, filename in enumerate(('pg.pdf', 'curi.py', 'afile.py', 'async.py')):
+    for idx, filename in enumerate(FILE_LIST):
         tasks.append(asyncio.create_task(read(f'{FILE_BASE}\\{filename}', idx)))
 
     response = await asyncio.gather(*tasks, return_exceptions=True)
@@ -33,4 +31,4 @@ if __name__ == "__main__":
     s = time.perf_counter()
     asyncio.run(main())
     elapsed = time.perf_counter() - s
-    print(f"{__file__} executed in {elapsed:0.2f} seconds.")
+    REPORT(__file__, elapsed)
