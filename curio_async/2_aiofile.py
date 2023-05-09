@@ -2,7 +2,7 @@ import asyncio
 import time
 import aiofiles
 
-from europython2023.curio import FILE_LIST, FILE_BASE, REPORT
+from europython2023.curio_async import FILE_LIST, REPORT
 
 async def read(filename, idx):
     print('started', filename, idx)
@@ -17,7 +17,7 @@ async def main():
     tasks = []
     # Iterate through files in the directory.
     for idx, filename in enumerate(FILE_LIST):
-        tasks.append(asyncio.create_task(read(f'{FILE_BASE}\\{filename}', idx)))
+        tasks.append(asyncio.create_task(read(filename, idx)))
 
     response = await asyncio.gather(*tasks, return_exceptions=True)
     idx = 0

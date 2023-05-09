@@ -1,5 +1,5 @@
 import time
-from europython2023.curio import FILE_LIST, FILE_BASE, REPORT
+from europython2023.curio_async import REPORT, FILE_LIST
 
 
 def read(filename, idx):
@@ -15,7 +15,7 @@ def main():
     tasks = []
 
     for idx, filename in enumerate(FILE_LIST):
-        tasks.append((filename, read(f'{FILE_BASE}\\{filename}', idx)))
+        tasks.append((filename, read(f'{filename}', idx)))
 
     for idx, task in enumerate(tasks, 1):
         ...

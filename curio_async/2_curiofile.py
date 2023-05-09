@@ -1,6 +1,7 @@
 import time
 import curio
-from europython2023.curio import FILE_LIST, FILE_BASE, REPORT
+
+from europython2023.curio_async import REPORT, FILE_LIST
 
 
 async def read(filename, idx):
@@ -15,7 +16,7 @@ async def read(filename, idx):
 async def main():
     async with curio.TaskGroup() as tasks:
         for idx, filename in enumerate(FILE_LIST):
-            await tasks.spawn(read, f'{FILE_BASE}\\{filename}', idx)
+            await tasks.spawn(read, f'{filename}', idx)
         idx = 0
         async for task in tasks:
             idx += 1

@@ -15,4 +15,4 @@ async def echo_client(client, addr):
 
 
 if __name__ == '__main__':
-    run(tcp_server, '', 25000, echo_client)
+    run(tcp_server, '', 7070, echo_client)

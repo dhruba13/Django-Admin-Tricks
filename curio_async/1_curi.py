@@ -1,7 +1,7 @@
 import time
 import curio
 
-from europython2023.curio import REPORT
+from europython2023.curio_async import REPORT
 
 async def count(variable):
     print(f'One{variable}')
