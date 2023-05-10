@@ -5,6 +5,7 @@ BODY = '<!DOCTYPE html><html><head><meta charset="utf-8"><title></title></head><
 
 
 async def echo_client(request):
+    print('Connection from', 'unknown')
     stream = StreamResponse()
     stream.content_type = 'text/html'
     stream.charset= 'utf-8'

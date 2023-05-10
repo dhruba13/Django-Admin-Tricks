@@ -6,7 +6,7 @@ def read(filename, idx):
     print('started', filename, idx)
     with open(filename, 'rb') as file:
         try:
-            return file.readlines()
+            return file.read()
         finally:
             print('readed', filename, idx)
 

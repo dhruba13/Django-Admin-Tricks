@@ -9,7 +9,7 @@ async def read(filename, idx):
     print('started', filename, idx)
     async with curio.file.aopen(filename, 'rb') as file:
         try:
-            return await file.readlines()
+            return await file.read()
         finally:
             print('readed', filename, idx)
 

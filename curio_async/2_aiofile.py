@@ -6,7 +6,7 @@ from europython2023.curio_async import FILE_LIST, REPORT
 
 async def read(filename, idx):
     print('started', filename, idx)
-    async with aiofiles.open(f'{filename}', mode='r') as file:
+    async with aiofiles.open(f'{filename}', mode='rb') as file:
         try:
             return (await file.read(), idx)
         finally:
