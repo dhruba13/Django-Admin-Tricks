@@ -9,9 +9,10 @@ async def read(filename, idx):
     print('started', filename, idx)
     async with curio.file.aopen(filename, 'rb') as file:
         try:
-            return await file.read()
+            return (await file.read(), idx)
         finally:
             print('readed', filename, idx)
+
 
 async def main():
     async with curio.TaskGroup() as tasks:

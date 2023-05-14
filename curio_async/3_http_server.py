@@ -6,7 +6,8 @@ BODY = '<!DOCTYPE html><html><head><meta charset="utf-8"><title></title></head><
 class echo_client(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        print('Connection from', 'http')
+        print('Connection from', self.client_address)
+        data = self.requestline
         stream = self.wfile
         stream.write(HEADERS)
         stream.write(BODY.encode('utf-8'))
