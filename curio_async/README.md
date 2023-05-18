@@ -8,10 +8,10 @@ python -m cProfile -o pstat/2_curiofile.pstat 2_curiofile.py curio read 4 files 
 
 
 python 3_curio_server.py curio echo http server
-hey http://localhost:7070/ -z 15s -c 1 -n 100       
+hey http://127.0.0.1:7070/ -z 15s -c 1 -n 100       
 
 python 3_aiohttp_server.py
-hey http://localhost:8080/ -z 15s -c 1 -n 100
+hey http://127.0.0.1:8080/ -z 15s -c 1 -n 100
 
 python 3_http_server.py
-hey http://localhost:9090/ -z 15s -c 1 -n 100
+hey http://127.0.0.1:9090/ -z 15s -c 1 -n 100

@@ -8,7 +8,7 @@ async def echo_client(client, addr):
     async with client.as_stream() as stream:
         data = await stream.read()
         if data:
-            print(data, 'Received from', addr)
+            # print(data, 'Received from', addr)
             ...
         await stream.write(HEADERS)
         await stream.write(BODY.encode('utf-8'))
