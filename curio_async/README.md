@@ -15,3 +15,9 @@ hey http://127.0.0.1:8080/ -z 15s -c 1 -n 100
 
 python 3_http_server.py
 hey http://127.0.0.1:9090/ -z 15s -c 1 -n 100
+
+
+
+
+python 4_final.py curio read and render http server
+hey http://127.0.0.1:7070/ -z 15s -c 1 -n 100

@@ -2,7 +2,8 @@ from pathlib import Path
 
 COUNT = 1
 FILE_BASE = Path(__file__).parent
-FILE_LIST = (FILE_BASE / 'docs' / 'pg.pdf', FILE_BASE / '1_curi.py', FILE_BASE / '1_tri.py', FILE_BASE / '1_async.py') * COUNT
+# FILE_LIST = (FILE_BASE / 'docs' / 'pg.pdf', FILE_BASE / '1_curi.py', FILE_BASE / '1_tri.py', FILE_BASE / '1_async.py') * COUNT
+FILE_LIST = (FILE_BASE / '1_curi.py', FILE_BASE / '1_tri.py', FILE_BASE / '1_async.py') * COUNT
 
 HEADERS = b'HTTP/1.1 200 OK\r\nContent-type: text/html; charset=utf-8\r\nConnection: close\r\n\r\n'
 BODY = '<!DOCTYPE html><html><head><meta charset="utf-8"><title></title></head><body>Hi</body></html>'
