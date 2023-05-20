@@ -3,6 +3,7 @@ import hashlib
 from curio import run, tcp_server
 
 from europython2023.curio_async import REPORT, FILE_LIST
+from europython2023.curio_async import REPORT as print
 
 HEADERS = b'HTTP/1.1 200 OK\r\nContent-type: text/html; charset=utf-8\r\nConnection: close\r\n\r\n'
 BODY_START = '<!DOCTYPE html><html><head><meta charset="utf-8"><title></title></head><body>'

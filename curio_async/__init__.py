@@ -9,8 +9,9 @@ HEADERS = b'HTTP/1.1 200 OK\r\nContent-type: text/html; charset=utf-8\r\nConnect
 BODY = '<!DOCTYPE html><html><head><meta charset="utf-8"><title></title></head><body>Hi</body></html>'
 
 
-def REPORT(file, elapsed):
-    print(f'{file} executed in {elapsed:0.5f} seconds.')
+def REPORT(file, *args, **kwargs):
+    return ''
+    print(f'{file} executed in {args[0]:0.5f} seconds.')
 
 
 # import shutil
