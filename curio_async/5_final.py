@@ -21,13 +21,12 @@ async def read(filename, idx):
             print('readed', filename, idx)
 
 
-async def render(stream, data, idx):
+def render(data, idx):
     print('render start', idx)
     text = data.decode('utf-8')
     sha1 = hashlib.sha1(data)  # .update(data)
     text = f'<pre><code>{text}</code></pre><p>Sha1: <samp>{sha1.hexdigest()}</samp><p>'.encode('utf-8')
     print('rendered', idx)
-    # await stream.write(text)
     return text, idx
 
 
@@ -40,24 +39,26 @@ async def echo_client(client, addr):
 
         await stream.write(HEADERS)
         await stream.write(BODY_START.encode('utf-8'))
-
+        idx = 0
         async with curio.TaskGroup() as reads:
+
             for idx, filename in enumerate(FILE_LIST):
                 await reads.spawn(read, f'{filename}', idx)
 
-        print('read completed.')
+        print('task group1 ends')
+        print(idx, 'read completed.')
 
+        idx = 0
         async with curio.TaskGroup() as renders:
             for result in reads.results:
-                await renders.spawn(render, stream, *result)  # curio.run_in_process,
+                await renders.spawn(curio.run_in_process, render, *result)
 
-        print('renders completed.')
+            async for task in renders:
+                result, idx = task.result
+                await stream.write(result)
 
-        async with curio.TaskGroup() as streamers:
-            for result, idx in renders.results:
-                await streamers.spawn(stream.write, result)
-
-        print('renders completed.')
+        print('task group2')
+        print(idx, 'renders completed.')
 
         await stream.write(BODY_END.encode('utf-8'))
 
