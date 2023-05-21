@@ -16,7 +16,7 @@ async def render(data, idx):
     print('render start', idx)
     text = data.decode('utf-8')
     sha1 = hashlib.sha1(data)  # .update(data)
-    text = f'<pre><code>{text}</code></pre><p>Sha1: <samp>{sha1.hexdigest()}</samp><p>'.encode('utf-8')
+    text = f'<h1>File: {idx}</h1><pre><code>{text}</code></pre><p>Sha1: <samp>{sha1.hexdigest()}</samp><p>'.encode('utf-8')
     print('rendered', idx)
     return text, idx
 
