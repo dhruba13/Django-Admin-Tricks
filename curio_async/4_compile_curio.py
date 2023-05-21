@@ -21,13 +21,12 @@ async def read(filename, idx):
             print('readed', filename, idx)
 
 
-async def render(stream, data, idx):
+async def render(data, idx):
     print('render start', idx)
     text = data.decode('utf-8')
     sha1 = hashlib.sha1(data)  # .update(data)
     text = f'<pre><code>{text}</code></pre><p>Sha1: <samp>{sha1.hexdigest()}</samp><p>'.encode('utf-8')
     print('rendered', idx)
-    # await stream.write(text)
     return text, idx
 
 
@@ -49,7 +48,7 @@ async def echo_client(client, addr):
 
         async with curio.TaskGroup() as renders:
             for result in reads.results:
-                await renders.spawn(render, stream, *result)  # curio.run_in_process,
+                await renders.spawn(render, *result)  # curio.run_in_process,
 
         print('renders completed.')
 

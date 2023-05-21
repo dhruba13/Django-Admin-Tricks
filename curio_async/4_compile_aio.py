@@ -12,13 +12,12 @@ from europython2023.curio_async import FILE_LIST, REPORT
 from europython2023.curio_async import REPORT as print
 
 
-async def render(stream, data, idx):
+async def render(data, idx):
     print('render start', idx)
     text = data.decode('utf-8')
     sha1 = hashlib.sha1(data)  # .update(data)
     text = f'<pre><code>{text}</code></pre><p>Sha1: <samp>{sha1.hexdigest()}</samp><p>'.encode('utf-8')
     print('rendered', idx)
-    # await stream.write(text)
     return text, idx
 
 
@@ -51,7 +50,7 @@ async def echo_client(request):
 
     tasks = []
     for result in response:
-        tasks.append(asyncio.create_task(render(stream, *result)))
+        tasks.append(asyncio.create_task(render(*result)))
 
     response = await asyncio.gather(*tasks, return_exceptions=True)
 

@@ -40,16 +40,20 @@ class echo_client(BaseHTTPRequestHandler):
         stream.write(BODY_START.encode('utf-8'))
 
         tasks = []
-        idx = 0
 
         for idx, filename in enumerate(FILE_LIST):
             tasks.append(read(f'{filename}', idx))
 
-        print(idx, 'read completed.')
+        print('read completed.')
 
-        for idx, result in enumerate(tasks, 1):
-            result, idx = render(*result)
-            stream.write(result)
+        renderers = []
+        for result in tasks:
+            renderers.append(render(*result))
+
+        print('render completed.')
+
+        for rendered, idx in renderers:
+            stream.write(rendered)
 
 
         stream.write(BODY_END.encode('utf-8'))
