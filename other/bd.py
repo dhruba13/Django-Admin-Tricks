@@ -16,3 +16,29 @@ def count_living_per_year(population):
 
 def count_living_per_year_(population):
     return Counter(chain(*(range(*_) for _ in population)))
+
+
+def coro(*args, **kwargs):
+    print('strt coro')
+    sended = yield 'result'
+    print('strt coro')
+
+async def acoro(*args, **kwargs):
+    print('strt acoro')
+    sended = await acoro('result')
+    print('strt acoro')
+
+def gen(*args, **kwargs):
+    print('strt gen')
+    sended =  acoro('result')
+    for bit in 'resilt':
+        yield bit
+    print('end gen')
+
+
+def yieldedcoro(*args, **kwargs):
+    print('strt declaredcoro')
+    sended = yield from gen()
+    print('strt declaredcoro')
+
+

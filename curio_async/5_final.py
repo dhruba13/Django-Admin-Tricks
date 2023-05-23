@@ -29,10 +29,9 @@ async def render(data, idx):
     print('rendered', idx)
     return text, idx
 
-
 async def processing(stream, filename, idx):
-    readed, *_ = await read(filename, idx)
-    rendered, *_ = await render(readed, idx)
+    readed = await read(filename, idx)
+    rendered, idx = await render(*readed)
     await stream.write(rendered)
 
 
@@ -49,7 +48,6 @@ async def echo_client(client, addr):
         async with curio.TaskGroup() as reads:
             for idx, filename in enumerate(FILE_LIST):
                 await reads.spawn(processing, stream, f'{filename}', idx)
-
 
         await stream.write(BODY_END.encode('utf-8'))
 
