@@ -12,7 +12,7 @@ folder **docs** contains all presentations from my talks.<br>
 • https://bitbucket.org/danilovmy/europython2023/src/master/docs/yield.pptx<br>
 
 
-##poster "Yield-from":<br>
+## Poster "Yield-from":<br>
 https://bitbucket.org/danilovmy/europython2023/src/master/docs/poster_europython.pdf <br>
 Created in premium version of Canva. (https://www.canva.com/) <br>
   
