@@ -21,11 +21,11 @@ Created in premium version of Canva. (https://www.canva.com/) <br>
 # "Hidden Gems in Django-Admin" series of talks:
 
 ## video and presentations about Hidden Gems in Django-Admin:
-• Django Con US 2022 https://youtu.be/G63NLjmCjtc (on english, Oct 2022)
-• repository https://bitbucket.org/danilovmy/django-con-us-2022
-• presentation https://bitbucket.org/danilovmy/django-con-us-2022/src/master/docs/DAP_USA_FINAL.PPTX
+• Django Con US 2022 https://youtu.be/G63NLjmCjtc (on english, Oct 2022) <br>
+• repository https://bitbucket.org/danilovmy/django-con-us-2022 <br>
+• presentation https://bitbucket.org/danilovmy/django-con-us-2022/src/master/docs/DAP_USA_FINAL.PPTX <br>
 
 
-• Django Con EU 2022 https://youtu.be/HJfPkbzcCJQ (on english, Sept 2022)
-• repository https://bitbucket.org/danilovmy/django-con-eu-2022
-• presentation https://bitbucket.org/danilovmy/django-con-eu-2022/src/master/docs/DAP_Porto.PPTX
+• Django Con EU 2022 https://youtu.be/HJfPkbzcCJQ (on english, Sept 2022) <br>
+• repository https://bitbucket.org/danilovmy/django-con-eu-2022 <br>
+• presentation https://bitbucket.org/danilovmy/django-con-eu-2022/src/master/docs/DAP_Porto.PPTX <br>
