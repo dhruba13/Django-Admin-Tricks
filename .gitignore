@@ -49,4 +49,8 @@ Thumbs.db
 *.wmv
 
 *.bat
+.venv
+.vscode
+other/
+leet_code/
 

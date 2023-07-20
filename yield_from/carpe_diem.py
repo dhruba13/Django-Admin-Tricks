@@ -1,7 +1,13 @@
-INFINITY = iter(int, 1)  # infinity iterator
 
+while True: # infinity generator
+    if something:
+        break
+    ...  # skipped on break
 
-for __moment__ in INFINITY: # infinity generator
+INFINITY = (_ for _ in iter(int, 1))
+for __moment__ in INFINITY:
+    if something:
+        INFINITY.clean()
     ...  # Carpe diem
 
 
