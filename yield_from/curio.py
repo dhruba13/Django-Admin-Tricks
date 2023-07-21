@@ -45,3 +45,4 @@ def select_proxy(url, proxies):
                     custom_encoder=custom_encoder,
                     sqlalchemy_safe=sqlalchemy_safe,
                 ) for item in obj)
+
