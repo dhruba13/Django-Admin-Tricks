@@ -19,6 +19,10 @@ Created in premium version of Canva. (https://www.canva.com/) <br>
   
 
 # "Hidden Gems in Django-Admin" series of talks:
+• presentation from europython <br>
+https://bitbucket.org/danilovmy/europython2023/src/master/docs/dap_europython.pptx <br>
+• refactored **inline.js** <br>
+https://bitbucket.org/danilovmy/europython2023/src/master/django_admin/static/admin/js/inlines.js  <br>
 
 ## video and presentations about Hidden Gems in Django-Admin:
 • Django Con US 2022 https://youtu.be/G63NLjmCjtc (on english, Oct 2022) <br>
